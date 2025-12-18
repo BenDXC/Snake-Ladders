@@ -22,7 +22,7 @@
 ## Tech Stack
 - **Language:** Java  
 - **Platform:** Standard JDK (no external frameworks)  
-- **Game Type:** Turn-based board game simulation :contentReference[oaicite:4]{index=4}
+- **Game Type:** Turn-based board game simulation
 
 ## Installation
 
