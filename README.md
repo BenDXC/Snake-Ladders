@@ -1,7 +1,7 @@
 # Snake-Ladders
 
 ## Overview
-**Snake-Ladders** is a multi-user implementation of the classic **Snakes and Ladders** board game written in Java. The game simulates the traditional board game experience where players race from square 1 to square 100, using dice rolls to advance their token. Along the way, ladders help players climb ahead, while snakes send them backward — introducing both excitement and unpredictability to gameplay. :contentReference[oaicite:1]{index=1}
+**Snake-Ladders** is a multi-user implementation of the classic **Snakes and Ladders** board game written in Java. The game simulates the traditional board game experience where players race from square 1 to square 100, using dice rolls to advance their token. Along the way, ladders help players climb ahead, while snakes send them backward — introducing both excitement and unpredictability to gameplay.
 
 ## Features
 - Supports multiple players
@@ -9,7 +9,7 @@
 - Snakes and ladders placed at predetermined locations
 - Exact roll required to reach the final square (100)
 - Board mechanics with snakes, ladders, and additional game effects
-- Implemented in Java for desktop execution :contentReference[oaicite:2]{index=2}
+- Implemented in Java for desktop execution 
 
 ## Game Rules
 - Players start on square **1** and take turns rolling a standard 6-sided die.
@@ -35,14 +35,19 @@
 ### Compile & Run
 Navigate to the project root and compile the Java source
 `javac -d out src/com/*.java`
+
 Then run the game:
 `java -cp out com.Main`
 
 # Usage
 Launch the application with java com.Main from the compiled directory.
+
 Enter the number of players.
+
 Take turns rolling the die.
+
 Watch as players advance, climb ladders, and slide down snakes.
+
 The first player to land exactly on square 100 wins.
 
 # Project Structure
@@ -61,10 +66,13 @@ Snake-Ladders/
 # 🧠 1. Main.java
 
 ## Responsibility:
-Entry point of the game. Responsible for initializing the game, reading user input (number of players), and starting the game loop.
+Entry point of the game. 
+
+Responsible for initializing the game, reading user input (number of players), and starting the game loop.
 
 ## Key Methods
 main(String[] args): Launches the game and sets up initial state.
+
 start(): Begins the turn-based loop.
 
 # 🧱 2. Game.java
@@ -74,22 +82,30 @@ Central game engine; manages player turns, dice rolls, game state, and win condi
 
 ## Key Methods
 rollDice(): Simulates dice roll (1–6).
+
 playTurn(Player player): Handles a single player’s turn including movement and checks for snakes/ladders.
+
 isGameOver(): Checks whether all but one player have reached the finish (square 100).
+
 nextPlayer(): Advances to the next turn.
 
 # 🗺️ 3. Board.java
 
 ## Responsibility:
-Represents the Snakes & Ladders board. Stores the positions of snakes and ladders, and defines board rules.
+Represents the Snakes & Ladders board. 
+
+Stores the positions of snakes and ladders, and defines board rules.
 
 ## Key Properties
 Map<Integer, Integer> snakes: Maps snake head → tail.
+
 Map<Integer, Integer> ladders: Maps ladder base → top.
 
 ## Key Methods
 getNewPosition(int position): Returns updated position after snakes/ladders.
+
 isSnake(int square): Returns true if square is snake head.
+
 isLadder(int square): Returns true if ladder base.
 
 # 🎲 4. Dice.java
@@ -99,6 +115,7 @@ Simulates dice rolling and enforces rules such as extra turn on a roll of 6.
 
 ## Key Methods
 roll(): Returns a random integer between 1 and 6.
+
 isExtraTurn(int roll): Returns true if roll == 6.
 
 # 🙍 5. Player.java
@@ -108,11 +125,14 @@ Keeps track of a player’s name, current position, and game state (finished/not
 
 ## Key Members
 String name
+
 int position
+
 boolean finished
 
 ## Key Methods
 move(int steps): Moves player forward.
+
 applyBoardEffect(int newPosition): Applies effects of snakes or ladders.
 
 # 📌 Tips for Maintainable Logic Layer
