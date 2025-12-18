@@ -17,7 +17,7 @@
 - If a player lands on the head of a snake, they slide down to its tail.
 - Reaching square **100** exactly is required to win — overshooting keeps the player in place.
 - If a player rolls a **6**, they earn an additional turn.
-- The game continues until all but one player have reached square **100**. :contentReference[oaicite:3]{index=3}
+- The game continues until all but one player have reached square **100**.
 
 ## Tech Stack
 - **Language:** Java  
